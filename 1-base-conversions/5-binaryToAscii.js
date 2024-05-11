@@ -22,7 +22,13 @@ const binaryStringToArray = str => {
 };
 
 const binaryToAscii = str => {
-  // Your code here 
+  let groups = binaryStringToArray(str);
+  
+  let ascii = groups.map((binaryGroup) => {
+    let decimal = parseInt(binaryGroup, 2); 
+     return String.fromCharCode(decimal);
+  })
+  return ascii.join('');
 };
 
 /******************************************************************************/
