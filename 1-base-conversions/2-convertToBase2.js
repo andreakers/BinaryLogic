@@ -3,7 +3,12 @@
 /******************************************************************************/
 
 const convertToBase2 = element => {
-  // Your code here 
+  if (typeof element === "number") {
+    return "0b" + element.toString(2)
+  } else {
+    let num = parseInt(element)
+    return '0b' + num.toString(2)
+  }
 };
 
 /******************************************************************************/
@@ -15,7 +20,7 @@ console.log(convertToBase2(123)); // 0b1111011
 console.log(convertToBase2(1000)); // 0b1111101000
 
 console.log('––––––');
-
+ 
 console.log(convertToBase2('0xf')); // 0b1111
 console.log(convertToBase2('0xfa')); // 0b11111010
 console.log(convertToBase2('0x1234')); // 0b1001000110100
